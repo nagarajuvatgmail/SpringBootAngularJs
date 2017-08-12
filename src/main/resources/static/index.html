@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Spring boot and Angularjs Tutorial</title>
     <link rel="stylesheet" href="/css/app.css">
-    
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
 	<style type="text/css">
 		div.maindiv{
 			padding: 15px;
@@ -73,12 +73,13 @@
 	   			<th>Name</th>
 	   			<th>CountryCode</th>
 	   		</tr>
-			<tr ng-repeat="city in cities">
+			<tr dir-paginate="city in cities|itemsPerPage:5">
 	   			<td>{{ city.id }}</td>
 	   			<td>{{ city.name }}</td>
 	   			<td>{{ city.countryCode }}</td>
 	 		</tr>
 		</table>
+		<dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
 	</div>
 	<div ng-controller="myCtrl">
 		{{message}}
@@ -89,6 +90,6 @@
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-
+<script src="/js/dirPagination.js"></script>
 </body>
 </html>
